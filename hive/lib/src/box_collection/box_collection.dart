@@ -24,9 +24,10 @@ class BoxCollection implements implementation.BoxCollection {
     Set<String> boxNames, {
     String? path,
     HiveCipher? key,
+    bool useLocks = true,
   }) async {
     if (!_hiveInit) {
-      Hive.init(path ?? './');
+      Hive.init(path ?? './', useLocks: useLocks);
       _hiveInit = true;
     }
     final collection = BoxCollection(name, boxNames);
