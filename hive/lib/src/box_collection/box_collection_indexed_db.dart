@@ -18,6 +18,7 @@ class BoxCollection implements implementation.BoxCollection {
     Set<String> boxNames, {
     dynamic path,
     HiveCipher? key,
+    bool useLocks = true,
   }) async {
     final factory = window.indexedDB;
     if (factory == null) {
